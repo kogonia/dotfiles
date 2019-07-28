@@ -1,5 +1,5 @@
 # alias for dotfiles repository
-alias config='/usr/bin/git --git-dir=/home/gio/.cfg/ --work-tree=/home/gio'
+alias config='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}'
 
 # ls 
 alias l1='ls -1'
