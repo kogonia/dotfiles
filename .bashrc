@@ -52,13 +52,15 @@ if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	color_gray="\[$(/usr/bin/tput setaf 8)\]"
 	color_off="\[$(/usr/bin/tput sgr0)\]"
 
+    color_bold="\[$(/usr/bin/tput bold)\]"
+
 	color_error="$(/usr/bin/tput setab 1)$(/usr/bin/tput setaf 7)"
 	color_error_off="$(/usr/bin/tput sgr0)"
 
 	# set user color
 	case `id -u` in
-		0) color_user=$color_red ;;
-		*) color_user=$color_green ;;
+		0) color_user=${color_bold}${color_red} ;;
+		*) color_user=${color_bold}${color_green} ;;
 	esac
 fi
 
