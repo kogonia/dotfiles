@@ -7,3 +7,8 @@ alias ll='ls -ahlF'
 alias la='ls -a'
 alias l='ls -CF'
 alias lt='ls -laht'
+
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
