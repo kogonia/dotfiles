@@ -15,3 +15,6 @@ alias ....='cd ../../..'
 
 # apt
 alias apg='sudo apt update; sudo apt upgrade'
+
+# start a web server in current folder
+alias www='python -m SimpleHTTPServer 8000'
