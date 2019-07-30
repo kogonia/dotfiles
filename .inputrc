@@ -1,3 +1,7 @@
+# include default bindings
+$include  /etc/inputrc
+
+# custom
 set show-all-if-ambiguous on
 set completion-ignore-case on
 TAB:menu-complete
