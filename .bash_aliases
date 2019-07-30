@@ -12,3 +12,6 @@ alias lt='ls -laht'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
+# apt
+alias apg='sudo apt update; sudo apt upgrade'
