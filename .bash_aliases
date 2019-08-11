@@ -19,5 +19,9 @@ alias ....='cd ../../..'
 # apt
 alias apg='sudo apt update; sudo apt upgrade'
 
-# start a web server in current folder
+# start a web server in current folder [ python ]
 alias www='python -m SimpleHTTPServer 8000'
+
+# start api handler [ golang ]
+alias api='go run /usr/lib/go/src/go.code.local/api/main.go'
+
