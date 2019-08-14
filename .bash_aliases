@@ -25,3 +25,6 @@ alias www='python -m SimpleHTTPServer 8000'
 # start api handler [ golang ]
 alias api='go run /usr/lib/go/src/go.code.local/api/main.go'
 
+# magic word :)
+alias pls='sudo'
+alias plz='sudo'
