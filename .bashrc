@@ -112,8 +112,16 @@ function prompt_command {
     [[ ! -z $GIT_BRANCH ]] && PS1_GIT=" (git: ${GIT_BRANCH})"
     [[ ! -z $VIRTUAL_ENV ]] && PS1_VENV=" (venv: ${VIRTUAL_ENV#$WORKON_HOME})"
 
+    # ip address
+    local IP=$(hostname -I)
+    IP=$(echo -en ${IP%?})
+    IP=$(echo -en ${IP// /, })
+
+    # curent time
+    local TIME=$(date +%H:%M)
+
     # calculate prompt length
-    local PS1_length=$((${#USER}+${#LOCAL_HOSTNAME}+${#PWDNAME}+${#PS1_GIT}+${#PS1_VENV}+25))
+    local PS1_length=$((${#TIME}+${#IP}+${#LOCAL_HOSTNAME}+${#PWDNAME}+${#PS1_GIT}+${#PS1_VENV}+20))
     local FILL=
 
     # if length is greater, than terminal width
@@ -142,11 +150,8 @@ function prompt_command {
         [[ ! -z $VIRTUAL_ENV ]] && PS1_VENV=" (venv: ${color_blue}${VIRTUAL_ENV#$WORKON_HOME}${color_off})"
     fi
 
-    # ip address
-    IP=$(hostname -I | tr -d '[:space:]')
-
     # set new color prompt
-    PS1=" [ ${color_yellow}\$(date +%H:%M)${color_off} ] [ ${color_red}${IP}${color_off} ] ${color_blue}${PWDNAME}${color_off}${PS1_GIT}${PS1_VENV} ${FILL}\n [ ${color_user}${USER}${color_off} ] ➜ "
+    PS1=" [ ${color_yellow}${TIME}${color_off} ] [ ${color_blue}${LOCAL_HOSTNAME}${color_off} ] ${color_blue}${PWDNAME}${color_off}${PS1_GIT}${PS1_VENV} ${FILL} [ ${color_red}${IP}${color_off} ]\n [ ${color_user}${USER}${color_off} ] ➜ "
 
     # get cursor position and add new line if we're not in first column
     # cool'n'dirty trick (http://stackoverflow.com/a/2575525/1164595)
