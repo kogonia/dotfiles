@@ -9,11 +9,19 @@
 unset DYLD_LIBRARY_PATH
 
 # add local bin path
+## php
+PHPMY="/var/www/php/"
+## golang
+GOPATH="$HOME/go"
+GOBIN="$GOPATH/bin"
+GOMY="$GOPATH/src/go.code.local"
+
 PATH=$HOME/.bin:$PATH
 PATH=/usr/local/bin:$PATH
 PATH=/usr/local/sbin:$PATH
 [ -d /usr/local/mysql/bin ] && PATH=/usr/local/mysql/bin:$PATH
 [ -d /usr/local/share/npm/bin ] && PATH=/usr/local/share/npm/bin:$PATH
+[ -d $GOPATH ] && PATH=$GOPATH:$PATH
 
 # don't put duplicate lines in the history
 export HISTCONTROL=ignoreboth:erasedups
@@ -240,12 +248,3 @@ fi
 # this is for delete words by ^W
 tty -s && stty werase ^- 2>/dev/null
 
-# golang
-GOHOME="/usr/lib"
-GOROOT="$GOPATH"
-GOPATH="$GOHOME/go"
-GOBIN="$GOPATH/bin"
-GOMY="$GOPATH/src/go.code.local"
-
-# php
-PHPMY="/var/www/php/"
