@@ -234,11 +234,14 @@ usage:  fawk [<awk_args>] <column_number>
 }
 
 # bash completion
-if [ -f /usr/local/bin/brew ]; then
-    if [ -f `/usr/local/bin/brew --prefix`/etc/bash_completion ]; then
-        . `/usr/local/bin/brew --prefix`/etc/bash_completion
-    fi
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
 fi
+
 
 # bash aliases
 if [ -f ~/.bash_aliases ]; then
