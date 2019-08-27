@@ -126,7 +126,7 @@ function prompt_command {
     IP=$(echo -en ${IP// /, })
 
     # curent time
-    local TIME=$(date +%H:%M)
+    local TIME=$(date +%H:%M:%S)
 
     # calculate prompt length
     local PS1_length=$((${#TIME}+${#IP}+${#LOCAL_HOSTNAME}+${#PWDNAME}+${#PS1_GIT}+${#PS1_VENV}+20))
