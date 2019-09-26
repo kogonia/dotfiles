@@ -14,7 +14,7 @@ PHPMY="/var/www/php/"
 ## golang
 GOPATH="$HOME/go"
 GOBIN="$GOPATH/bin"
-GOMY="$GOPATH/src/go.code.local"
+GOMY="$GOPATH/src/github.com/kogonia"
 
 PATH=$HOME/.bin:$PATH
 PATH=/usr/local/bin:$PATH
