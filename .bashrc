@@ -22,7 +22,7 @@ PATH=/usr/local/sbin:$PATH
 [ -d /usr/local/mysql/bin ] && PATH=/usr/local/mysql/bin:$PATH
 [ -d /usr/local/share/npm/bin ] && PATH=/usr/local/share/npm/bin:$PATH
 [ -d /usr/java/jre1.8.0_221/bin ] && PATH=/usr/java/jre1.8.0_221/bin:$PATH
-[ -d $GOPATH ] && PATH=$GOPATH:$PATH
+[ -d $GOBIN ] && PATH=$GOBIN:$PATH
 
 # don't put duplicate lines in the history
 export HISTCONTROL=ignoreboth:erasedups
