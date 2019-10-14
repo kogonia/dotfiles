@@ -251,13 +251,15 @@ usage:  fawk [<awk_args>] <column_number>
 
 # bash completion
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
+    if [ -f ~/.bash_completion ]; then
+        .  ~/.bash_completion
+    fi
 fi
-
 
 # bash aliases
 if [ -f ~/.bash_aliases ]; then
@@ -266,4 +268,5 @@ fi
 
 # this is for delete words by ^W
 tty -s && stty werase ^- 2>/dev/null
+
 
