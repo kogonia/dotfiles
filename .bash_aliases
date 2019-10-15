@@ -1,5 +1,8 @@
-# alias for dotfiles repository
+# dotfiles repository
 alias config='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}'
+
+# systemctl
+alias sctl='systemctl'
 
 # grep
 alias grep='grep --color'
@@ -28,3 +31,4 @@ alias api='go run ${GOMY}/api/main.go'
 # magic word :)
 alias pls='sudo'
 alias plz='sudo'
+

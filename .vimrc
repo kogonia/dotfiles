@@ -44,3 +44,15 @@ set equalalways            " makes sure Vim try to make all windows equal
 " invisible characters
 set nolist                 " do not display unprintable characters by default
 set listchars=tab:⇥\ ,space:·,trail:·,extends:⋯,precedes:⋯,eol:¬  " invisible symbols representation
+execute pathogen#infect()
+call pathogen#helptags()
+
+" NERD Tree
+map <C-n> :NERDTreeToggle<CR>
+
+" split screen panels navigation
+nnoremap <C-J> <C-W><C-J>   " switch on panel down
+nnoremap <C-K> <C-W><C-K>   " switch on panel up
+nnoremap <C-L> <C-W><C-L>   " switch on panel right
+nnoremap <C-H> <C-W><C-H>   " switch on panel left
+

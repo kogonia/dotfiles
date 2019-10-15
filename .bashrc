@@ -22,6 +22,7 @@ PATH=/usr/local/sbin:$PATH
 [ -d /usr/local/mysql/bin ] && PATH=/usr/local/mysql/bin:$PATH
 [ -d /usr/local/share/npm/bin ] && PATH=/usr/local/share/npm/bin:$PATH
 [ -d /usr/java/jre1.8.0_221/bin ] && PATH=/usr/java/jre1.8.0_221/bin:$PATH
+[ -d $HOME/.vimpkg/bin ] && PATH=$HOME/.vimpkg/bin:$PATH
 [ -d $GOBIN ] && PATH=$GOBIN:$PATH
 
 # don't put duplicate lines in the history
@@ -268,5 +269,4 @@ fi
 
 # this is for delete words by ^W
 tty -s && stty werase ^- 2>/dev/null
-
 
