@@ -484,8 +484,8 @@ _complete_alias() {
 awk '/alias/ {$1=""; print $0}' ~/.bash_aliases | while read line
 do
     als=$(echo -en "${line}" | awk -F "='" '{print $1}')
-    if ! grep -q "complete -F _complete_alias ${als}" ".bash_completion"; then
-        echo "complete -F _complete_alias ${als}" >> .bash_completion
+    if ! grep -q "complete -F _complete_alias ${als}" "$HOME/.bash_completion"; then
+        echo "complete -F _complete_alias ${als}" >> $HOME/.bash_completion
     fi
 done
 
@@ -506,19 +506,4 @@ complete -F _complete_alias www
 complete -F _complete_alias api
 complete -F _complete_alias pls
 complete -F _complete_alias plz
-complete -F _complete_alias config
-complete -F _complete_alias sctl
-complete -F _complete_alias grep
-complete -F _complete_alias l1
-complete -F _complete_alias ll
-complete -F _complete_alias la
-complete -F _complete_alias l
-complete -F _complete_alias lt
-complete -F _complete_alias ..
-complete -F _complete_alias ...
-complete -F _complete_alias ....
-complete -F _complete_alias apg
-complete -F _complete_alias www
-complete -F _complete_alias api
-complete -F _complete_alias pls
-complete -F _complete_alias plz
+
