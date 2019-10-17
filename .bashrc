@@ -9,6 +9,8 @@
 unset DYLD_LIBRARY_PATH
 
 # add local bin path
+## node
+export NODE_PATH="/usr/local/lib/node_modules/npm/node_modules/"
 ## php
 PHPMY="/var/www/php/"
 ## golang
