@@ -1,7 +1,18 @@
-" Base settings -----------------------------------------------------------------------------------
 set nocompatible           " use Vim settings, rather then Vi settings
 syntax on                  " turn on syntax highlighting (this will turn 'filetype on' by default)
+filetype off               " turn off file type detection
+
+" Plugins by VundleVim ---------------------------------------------------------------------------
+set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle and initialize
+call vundle#begin()               " call vundle#begin('~/some/path/here')
+Plugin 'VundleVim/Vundle.vim'     " let Vundle manage Vundle, required
+Plugin 'scrooloose/nerdtree'
+Plugin 'fatih/vim-go'
+
+call vundle#end()            " required
 filetype plugin indent on  " turn on file type detection
+
+" Base settings -----------------------------------------------------------------------------------
 set hidden                 " the current buffer can be put to the background without writing it on disk
 set nobackup               " do not create backup files
 set noswapfile             " do not create swap files
@@ -24,6 +35,7 @@ set fileencodings=utf8,cp1251   " list of character encodings considered
 
 set ignorecase                  " ignore case sensivity
 set smartcase                   "
+set omnifunc=syntaxcomplete#Complete    " code completion
 
 " UI
 set showcmd                " show (partial) command in the last line of the screen
@@ -56,3 +68,18 @@ nnoremap <C-K> <C-W><C-K>   " switch on panel up
 nnoremap <C-L> <C-W><C-L>   " switch on panel right
 nnoremap <C-H> <C-W><C-H>   " switch on panel left
 
+" close brackets
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
+" go import on save
+let g:go_fmt_command = "goimports"
+
+" remap completion to ,,
+let mapleader=","
+inoremap <leader>, <C-x><C-o>
