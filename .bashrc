@@ -8,7 +8,9 @@
 # this is not correct, but Apple is too lazy to fix this
 unset DYLD_LIBRARY_PATH
 
-# add local bin path
+# add local bin PATH
+## QT
+QT_ROOT="$HOME/Qt5.14.0/Tools/QtCreator"
 ## node
 export NODE_PATH="/usr/local/lib/node_modules/npm/node_modules/"
 ## php
@@ -26,6 +28,13 @@ PATH=/usr/local/sbin:$PATH
 [ -d /usr/java/jre1.8.0_221/bin ] && PATH=/usr/java/jre1.8.0_221/bin:$PATH
 [ -d $HOME/.vimpkg/bin ] && PATH=$HOME/.vimpkg/bin:$PATH
 [ -d $GOBIN ] && PATH=$GOBIN:$PATH
+
+## perl
+PATH=$HOME/perl5/bin${PATH:+:${PATH}}; export PATH;
+PERL5LIB=$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT=$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
 # don't put duplicate lines in the history
 export HISTCONTROL=ignoreboth:erasedups
@@ -271,4 +280,5 @@ fi
 
 # this is for delete words by ^W
 tty -s && stty werase ^- 2>/dev/null
+
 
