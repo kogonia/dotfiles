@@ -46,5 +46,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+alias config='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
