@@ -42,6 +42,7 @@ plugins=(
   zsh-autosuggestions
   jovial
   osx
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -50,3 +51,12 @@ alias config='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+prompt_simple () {
+    echo -en "POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(prompt_char)\nPOWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()" >> ~/.p10k.zsh
+}
+
+prompt10k () {
+    sed -e s/"POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(prompt_char)"//g -i ~/.p10k.zsh
+    sed -e s/"POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()"//g -i ~/.p10k.zsh
+}
