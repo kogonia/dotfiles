@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/gio/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export JDK_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 export GOPATH="$HOME/go"
@@ -53,10 +53,16 @@ alias config='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 prompt_simple () {
+    prompt_clear
     echo -en "POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(prompt_char)\nPOWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()" >> ~/.p10k.zsh
 }
 
-prompt10k () {
-    sed -e s/"POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(prompt_char)"//g -i ~/.p10k.zsh
-    sed -e s/"POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()"//g -i ~/.p10k.zsh
+prompt_default () {
+    prompt_clear
+    echo -en "POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir)\nPOWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status user host ip vpn_ip public_ip)" >> ~/.p10k.zsh
+}
+
+prompt_clear () {
+    sed -e s/"POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(.*)"//g -i ~/.p10k.zsh
+    sed -e s/"POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(.*)"//g -i ~/.p10k.zsh
 }

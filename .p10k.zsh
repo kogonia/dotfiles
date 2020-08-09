@@ -1437,8 +1437,5 @@ typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 'builtin' 'unset' 'p10k_config_opts'
 
 
-
-
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(prompt_char)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status user host ip vpn_ip public_ip)
