@@ -8,8 +8,8 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-[ -d $(which vim) ] && export EDITOR=$(which vim)
-[ -d $(which vim) ] && export VISUAL=$(which vim)
+[ -f $(which vim) ] && export EDITOR=$(which vim)
+[ -f $(which vim) ] && export VISUAL=$(which vim)
 
 # Golang
 [ -d $HOME/go ] && export GOPATH="$HOME/go"
