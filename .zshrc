@@ -7,13 +7,22 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export JDK_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
-export GOPATH="$HOME/go"
-export GOBIN="$GOPATH/bin"
-[ -d $HOME/.cargo/bin ] &&  PATH=$HOME/.cargo/bin:$PATH
+
+[ -d $(which vim) ] && export EDITOR=$(which vim)
+[ -d $(which vim) ] && export VISUAL=$(which vim)
+
+# Golang
+[ -d $HOME/go ] && export GOPATH="$HOME/go"
+[ -d $GOPATH ] && export GOBIN="$GOPATH/bin"
 [ -d $HOME/bin ] &&  PATH=$HOME/bin:$PATH
 [ -d $GOBIN ] &&  PATH=$GOBIN:$PATH
+
+# Cargo
+[ -d $HOME/.cargo/bin ] &&  PATH=$HOME/.cargo/bin:$PATH
+
+# Java
+export JDK_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 
 #ZSH_THEME="jovial"
 ZSH_THEME="powerlevel10k/powerlevel10k"
